@@ -12,7 +12,7 @@ public static class AnimatorExtensions
         while (!animator.IsInTransition(layer) && stateInfo.normalizedTime < 1f)
         {
             yield return null;
-            stateInfo = animator.GetCurrentAnimatorStateInfo(layer);
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(layer).length);
         }
     }
 }
