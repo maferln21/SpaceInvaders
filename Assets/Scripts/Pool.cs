@@ -13,7 +13,7 @@ public class Pool : MonoBehaviour
         if (poolStack.Count > 0)
         {
             currentObject = poolStack.Pop();
-            if (!isTurnedOff)
+            if (isTurnedOff)
             {
             currentObject.SetActive(true);
             }
@@ -24,9 +24,9 @@ public class Pool : MonoBehaviour
         else
         {
             currentObject = Instantiate(prefab, position, Quaternion.identity);
-            if (!isTurnedOff)
+            if (isTurnedOff)
             {
-            currentObject.SetActive(true);
+            currentObject.SetActive(false);
             }
             currentObject.AddComponent<PoolObject>().Pool = this;
         }

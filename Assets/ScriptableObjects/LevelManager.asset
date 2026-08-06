@@ -18,6 +18,17 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
       spawnTime: 3
     - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
-      spawnTime: 5
+      spawnTime: 6
     - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
-      spawnTime: 7
+      spawnTime: 9
+    - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
+      spawnTime: 12
+  - EnemiesData:
+    - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
+      spawnTime: 2
+    - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
+      spawnTime: 8
+    - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
+      spawnTime: 12
+    - enemyPrefab: {fileID: 9017983974925494888, guid: 3525f6f20a985ed41901496df4dcadcb, type: 3}
+      spawnTime: 14
