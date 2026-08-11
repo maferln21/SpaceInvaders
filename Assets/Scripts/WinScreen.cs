@@ -15,12 +15,15 @@ public class WinScreen : MonoBehaviour
  private LevelManager levelManager;
  [SerializeField]
  private GameObject[] screenAssets;
- private void Awakw()
+ private bool isWinScreenShown = false;
+ private void Awake()
  {
     ShowScreenAssets(false);
  }
  public void ShowWinScreen()
  {
+   if ( isWinScreenShown) return;
+   isWinScreenShown = true;
     ShowScreenAssets(true);
     onShowWinScreen?.Invoke();
     ChangeTextMeshes("You\nWin!");
@@ -30,6 +33,8 @@ public class WinScreen : MonoBehaviour
  }
  public void ShowLoseScreen()
  {
+   if ( isWinScreenShown) return;
+   isWinScreenShown = true;
     ShowScreenAssets(true);
     onShowWinScreen?.Invoke();
     ChangeTextMeshes("You\nLose!");

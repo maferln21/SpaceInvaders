@@ -364,8 +364,8 @@ MonoBehaviour:
   levelManager: {fileID: 11400000, guid: 7fb60d1f8406ff641871e674a16da4ad, type: 2}
   screenAssets:
   - {fileID: 1409766924}
-  - {fileID: 394537349}
   - {fileID: 1128867666}
+  - {fileID: 394537349}
 --- !u!4 &332332294
 Transform:
   m_ObjectHideFlags: 0
@@ -544,10 +544,22 @@ MonoBehaviour:
   onEnemyDestroy:
     m_PersistentCalls:
       m_Calls: []
-  target: {fileID: 1909172288}
+  target: {fileID: 1000813845}
   onAllEnemiesDestroyed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 332332293}
+        m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
+        m_MethodName: ShowWinScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &353446343
 Transform:
   m_ObjectHideFlags: 0
@@ -835,7 +847,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu_Button
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
   onPointerEnterAnimationName: OnEnter
@@ -1827,7 +1839,19 @@ MonoBehaviour:
         m_CallState: 2
   onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 332332293}
+        m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
+        m_MethodName: ShowLoseScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &1000813844
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3450,7 +3474,7 @@ SceneRoots:
   - {fileID: 1790834435}
   - {fileID: 235176050}
   - {fileID: 2133765931}
-  - {fileID: 693055896}
   - {fileID: 353446343}
+  - {fileID: 693055896}
   - {fileID: 1000813845}
   - {fileID: 332332294}

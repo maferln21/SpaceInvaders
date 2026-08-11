@@ -4,6 +4,8 @@ public class Bullet : MonoBehaviour
 {
    [SerializeField]
    private float speed = 10f;
+   [SerializeField]
+   private string tagToIgore = "Player";
    private Rigidbody rb;
    private TrailRenderer trailRenderer;
    private void Awake()
@@ -24,6 +26,7 @@ public class Bullet : MonoBehaviour
    }
    private void OnTriggerEnter(Collider other)
    {
+      if (other.CompareTag(tagToIgore)) return;
     gameObject.SetActive(false);
    }
    private void OnDisable()
