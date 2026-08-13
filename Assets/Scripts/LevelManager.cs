@@ -3,10 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelManager", menuName = "Scriptable Objects/LevelManager")]
 public class LevelManager : ScriptableObject
 {
-    public int levelIndex = 0;
+     private int levelIndex = 0;
     public LevelData[] levels;
     public int LevelIndex => levelIndex;
-    public bool IsPastLastLevel => levelIndex >= levels.Length - 1;
+    public bool IsPastLastLevel => levelIndex >= levels.Length;
     public void NextLevel()
     {
         levelIndex++;
@@ -23,19 +23,21 @@ public class LevelManager : ScriptableObject
         }
         else
         {
-            Debug.LogWarning("Level index is out of range. Returnin null.");
+            Debug.LogWarning("Level index is out of range. Returning null.");
             return levels[0];
         }
     }
 }
+ 
 [System.Serializable]
 public class EnemiesData
 {
     public Enemy enemyPrefab;
     public float spawnTime;
 }
+ 
 [System.Serializable]
 public class LevelData
 {
-    public EnemiesData[] EnemiesData;
+    public EnemiesData[] enemiesData;
 }

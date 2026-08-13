@@ -13,11 +13,11 @@ public class Pool : MonoBehaviour
         if (poolStack.Count > 0)
         {
             currentObject = poolStack.Pop();
-            if (isTurnedOff)
+            if (!isTurnedOff)
             {
-            currentObject.SetActive(true);
+                currentObject.SetActive(true);
             }
-
+            
             currentObject.transform.position = position;
             currentObject.transform.rotation = Quaternion.identity;
         }
@@ -26,7 +26,7 @@ public class Pool : MonoBehaviour
             currentObject = Instantiate(prefab, position, Quaternion.identity);
             if (isTurnedOff)
             {
-            currentObject.SetActive(false);
+                currentObject.SetActive(false);
             }
             currentObject.AddComponent<PoolObject>().Pool = this;
         }
@@ -35,13 +35,17 @@ public class Pool : MonoBehaviour
     }
     public GameObject InstantiateObject(Transform parent)
     {
-        return InstantiateObject(parent.position);   
+        return InstantiateObject(parent.position, false);   
     }
     public void ReturnToPool(GameObject obj)
     {
         obj.SetActive(false);
         poolStack.Push(obj);
         activeObjects.Remove(obj);
+    }
+    public void InstantiateObjectOn(Transform parent)
+    {
+        InstantiateObject(parent.position, false);
     }
     public void DeactivateAllObjects()
     {

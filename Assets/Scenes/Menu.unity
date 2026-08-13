@@ -2062,7 +2062,19 @@ MonoBehaviour:
   fadeAnimator: {fileID: 1280820119}
   onSceneStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616925330}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayMusic
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Musica_Menu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1790834435
 Transform:
   m_ObjectHideFlags: 0

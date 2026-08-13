@@ -17,7 +17,7 @@ public class EnemiesManager : MonoBehaviour
     public void SetLevel()
     {
         currentLevelData = levelManager.GetCurrentLevelData();
-        foreach (EnemiesData enemyData in currentLevelData.EnemiesData)
+        foreach (EnemiesData enemyData in currentLevelData.enemiesData)
         {
             StartCoroutine(SpawnEnemy(enemyData));
         }
@@ -35,9 +35,10 @@ public class EnemiesManager : MonoBehaviour
     {
         onEnemyDestroy?.Invoke(enemyTransform);
         enemiesDestroyed++;
-        if (enemiesDestroyed >= currentLevelData.EnemiesData.Length)
+        if (enemiesDestroyed >= currentLevelData.enemiesData.Length)
         {
             onAllEnemiesDestroyed?.Invoke();
         }
     }
+    
 }
