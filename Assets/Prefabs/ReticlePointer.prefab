@@ -28,7 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6172357974628253307}
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_Bits: 8
   reticleSprite: {fileID: 8698057429935415148}
   reticleAnimator: {fileID: 7093592131775745446}
-  spriteDistance: 20
+  spriteDistance: 10
   idleAnimation: Idle
   enterAnimation: Enter
   exitAnimation: Exit
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.6, y: 8.99}
+  m_Size: {x: 3.12, y: 3.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -1,33 +1,50 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MobileAssetsManager : MonoBehaviour
 {
-   [SerializeField]
-   private GameObject[] mobileAssets;
-   [SerializeField]
-   private  GameObject[] desktopAssets;
-   
-   private void Awake()
-   {
-    if (Application.isEditor)
+    [SerializeField]
+    private GameObject[] mobileAssets;
+    [SerializeField]
+    private GameObject[] desktopAssets;
+    [SerializeField]
+    private Transform desktopCamera;
+    [SerializeField]
+    private Transform mobileCamera;
+    [SerializeField]
+    private Canvas gameCanvas;
+    [SerializeField]
+    private float canvasDistanceFromCamera = 867;
+    [SerializeField]
+    private float canvasMobileDistanceFromCamera = 650;
+    private void Awake()
     {
-        SetAciveAssets(desktopAssets, true);
+        if (Application.isEditor)
+        {
+            SetActiveAssets(desktopAssets, true);
+            SetCanvasToCamera(desktopCamera, canvasDistanceFromCamera);
+        }
+        else if (Application.isMobilePlatform)
+        {
+            SetActiveAssets(mobileAssets, true);
+            SetCanvasToCamera(mobileCamera, canvasMobileDistanceFromCamera);
+        }
+        else
+        {
+            SetActiveAssets(desktopAssets, true);
+            SetCanvasToCamera(desktopCamera, canvasDistanceFromCamera);
+        }
     }
-    else if ( Application.isMobilePlatform)
+    private void SetActiveAssets(GameObject[] assets, bool isActive)
     {
-        SetAciveAssets(mobileAssets, true);
+        foreach (var asset in assets)
+        {
+            asset.SetActive(isActive);
+        }
     }
-    else
+    private void SetCanvasToCamera(Transform cameraTransform, float distanceFromCamera = 0)
     {
-        SetAciveAssets(desktopAssets,true);
+        gameCanvas.transform.SetParent(cameraTransform);
+        gameCanvas.transform.localPosition = new Vector3(0, 0, distanceFromCamera);
     }
-   }
-   private void SetAciveAssets(GameObject[] assets, bool isActive)
-   {
-    foreach (var asset in assets)
-    {
-        asset.SetActive(isActive);
-        
-    }
-   }
 }
